@@ -3,6 +3,27 @@ Liminal Panda es un grupo de ciberespionaje avanzado (APT) que ha sido asociado 
 
 El ataque comienza con un socio de roaming que permite el acceso inicial a los servidores eDNS. Los eDNS son cruciales ya que resuelven las direcciones IP de nodos internos como HLR y GGSN. Una vez dentro, se establece la persistencia con una puerta trasera y un emulador SGSN para C&C. El movimiento lateral permite al atacante llegar a otros nodos como HLR/HSS. Finalmente, la exfiltración de datos se realiza a través de túneles GTP, llevando la información sensible fuera de la red hacia el atacante.
 
+Los túneles DNS, SIGTRAN y GTP son técnicas utilizadas por atacantes, como Liminal Panda, para la exfiltración de datos al abusar de protocolos de red legítimos para mover información de manera encubierta.
+
+A continuación, se explica cómo funcionan estos túneles para la exfiltración:
+
+Túneles DNS (Sistema de Nombres de Dominio):
+
+¿Cómo funciona? El DNS es un protocolo fundamental para traducir nombres de dominio legibles por humanos a direcciones IP. Los atacantes abusan de este protocolo incrustando pequeños fragmentos de datos maliciosos dentro de las consultas y respuestas DNS legítimas.
+Para exfiltración: Los datos a exfiltrar se codifican (por ejemplo, en Base64) y se dividen en partes pequeñas. Cada parte se incrusta en una subsección de una consulta DNS (por ejemplo, como un subdominio). Cuando el sistema comprometido realiza una consulta DNS para este dominio malicioso, el servidor DNS controlado por el atacante recibe la consulta y reconstruye los datos exfiltrados.
+Ventajas para el atacante: El tráfico DNS suele estar permitido a través de los firewalls y rara vez es inspeccionado a fondo, lo que lo convierte en un canal discreto para la comunicación y la exfiltración.
+Túneles SIGTRAN (Transporte de Señalización):
+
+¿Cómo funciona? SIGTRAN es un conjunto de protocolos de la suite IP que transportan la señalización de voz y datos de las redes SS7 (Sistema de Señalización No. 7) a través de redes IP. Es vital para las operaciones de telecomunicaciones, como el enrutamiento de llamadas y la gestión de SMS.
+Para exfiltración: Los atacantes pueden explotar vulnerabilidades o abusar de la confianza entre operadores para inyectar y encapsular datos dentro de los mensajes SIGTRAN. Estos mensajes, que se espera que contengan información de señalización, pueden ser manipulados para llevar cargas útiles de datos exfiltrados.
+Ventajas para el atacante: La complejidad y la naturaleza crítica de las redes SIGTRAN a menudo resultan en una menor supervisión de seguridad en comparación con el tráfico de datos general, lo que facilita el movimiento encubierto de datos.
+Túneles GTP (GPRS Tunnelling Protocol):
+
+¿Cómo funciona? GTP es el protocolo principal utilizado en las redes móviles (2G, 3G, 4G, 5G) para transportar datos de usuarios y señalización entre los diferentes nodos de la red central (como SGSN, GGSN, MME, SGW, PGW). Crea "túneles" lógicos para el tráfico de datos.
+Para exfiltración: Los atacantes, una vez que han comprometido un nodo dentro de la red móvil (como un SGSN, que Liminal Panda utiliza emuladores para lograr la persistencia y C&C), pueden abusar de los túneles GTP existentes o establecer nuevos túneles GTP maliciosos. Dentro de estos túneles, pueden encapsular y exfiltrar datos sensibles de suscriptores (como IMSI y SMS).
+Ventajas para el atacante: El tráfico GTP es fundamental para la operación de las redes móviles y es voluminoso. La inspección profunda de paquetes en los túneles GTP puede ser un desafío, lo que permite a los atacantes esconder datos exfiltrados dentro de un flujo de tráfico que se considera legítimo y necesario para la conectividad móvil.
+En resumen, Liminal Panda abusa de estos protocolos al incrustar datos robados dentro de su tráfico normal y esperado, utilizando la confianza y la falta de inspección profunda de estos protocolos en entornos de telecomunicaciones para evadir la detección y exfiltrar información sensible.
+
 
 1. Técnicas de Ingeniería Social y Phishing
 Correos electrónicos maliciosos: Liminal Panda utiliza campañas de phishing bien elaboradas, a menudo disfrazadas como comunicaciones legítimas de entidades gubernamentales o empresas.
