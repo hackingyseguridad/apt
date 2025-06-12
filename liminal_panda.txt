@@ -1,4 +1,53 @@
 
+Liminal Panda es un grupo de ciberespionaje avanzado (APT) que ha sido asociado principalmente con operaciones dirigidas contra objetivos en India y China, con un enfoque en sectores gubernamentales, militares y de infraestructura crítica. A continuación, se describen algunos de los métodos de ataque comúnmente utilizados por este grupo:
+
+1. Técnicas de Ingeniería Social y Phishing
+Correos electrónicos maliciosos: Liminal Panda utiliza campañas de phishing bien elaboradas, a menudo disfrazadas como comunicaciones legítimas de entidades gubernamentales o empresas.
+
+Documentos ofimáticos infectados: Archivos de Word, Excel o PDF con macros maliciosas que, al ser ejecutados, descargan y ejecutan malware.
+
+Suplantación de identidad (spear phishing): Personalización de mensajes para engañar a objetivos específicos (ejecutivos, funcionarios).
+
+2. Uso de Malware Personalizado
+DeedRat (o DeedRAT): Un RAT (Remote Access Trojan) utilizado para el control remoto de sistemas comprometidos.
+
+PlugX: Otro RAT común en operaciones APT, usado para robo de datos y espionaje.
+
+Keyloggers y módulos de exfiltración: Para capturar credenciales y datos sensibles.
+
+3. Explotación de Vulnerabilidades
+Zero-days y vulnerabilidades conocidas: Liminal Panda ha explotado fallos en software como Microsoft Office, navegadores y aplicaciones de uso común.
+
+Ejemplo: Uso de exploits en CVE-2017-11882 (vulnerabilidad en Microsoft Equation Editor) para ejecución de código remoto.
+
+4. Técnicas de Evasión y Persistencia
+Ofuscación de código: Uso de scripts cifrados (VBS, PowerShell) para evitar detección.
+
+Living-off-the-land (LotL): Abuso de herramientas legítimas del sistema (como WMIC, PsExec, PowerShell) para moverse lateralmente.
+
+Inyección de procesos: Ejecución de malware en procesos legítimos (ej. explorer.exe) para evadir antivirus.
+
+5. Ataques a la Cadena de Suministro (Supply Chain)
+Compromiso de actualizaciones de software: Envenenamiento de paquetes de instalación o actualizaciones de proveedores legítimos para distribuir malware.
+
+Ejemplo: Infección a través de instaladores de software comúnmente usado por los objetivos.
+
+6. Comunicaciones C2 (Command and Control)
+Dominios falsos: Uso de dominios que imitan organizaciones reales para alojar servidores C2.
+
+Protocolos cifrados: Comunicaciones mediante HTTPS o DNS tunneling para evitar bloqueos.
+
+Servidores proxy: Uso de múltiples capas de redireccionamiento para ocultar la infraestructura real.
+
+Objetivos Principales
+Entidades gubernamentales y militares (especialmente en India y China).
+
+Infraestructura crítica (energía, telecomunicaciones).
+
+Organizaciones con información geoestratégica sensible.
+
+
+==============================================================================================================================================
 
 
 grupo Liminal Panda, centrándose en objetivos del sector de telecomunicaciones, especialmente en infraestructuras basadas en protocolos como eDNS, GTP (GPRS Tunneling Protocol), y SIGTRAN. A continuación, se resume y explica cada fase:
