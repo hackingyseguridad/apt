@@ -125,3 +125,63 @@ Auditar logs de SIGTRAN/DNS para detectar exfiltración encubierta.
 Conclusión
 Liminal Panda demuestra un enfoque altamente especializado en telecomunicaciones, combinando exploits técnicos con abuso de relaciones de confianza. Su uso de herramientas como PingPong y CordScan, junto con la emulación de nodos SGSN, los distingue como un APT sofisticado en este sector.
 
+
+TERMINOS y ABREVIATURAS
+
+
+
+1. eDNS (Enhanced DNS)
+Qué es: Una versión mejorada del DNS tradicional, utilizada en redes móviles para resolver nombres de dominio asociados a servicios de roaming y conectividad entre operadores.
+
+Uso en ataques:
+
+Liminal Panda explota servidores eDNS con credenciales débiles o vulnerabilidades para ganar acceso inicial.
+
+Permite redirigir tráfico o suplantar nodos críticos (ej. HLR).
+
+2. GTP (GPRS Tunneling Protocol)
+Qué es: Protocolo usado en redes 2G/3G/4G para encapsular y transportar datos de usuarios (voz, SMS, internet) entre nodos de la red móvil (GGSN, SGSN).
+
+Uso en ataques:
+
+Emulación de SGSN: Los atacantes crean túneles GTP falsos para comunicaciones encubiertas (C2).
+
+Exfiltración: Ocultar datos robados (ej. IMSI) dentro de tráfico GTP legítimo.
+
+3. SIGTRAN (Signaling Transport Protocol)
+Qué es: Conjunto de protocolos para transmitir señales de telecomunicaciones (SS7) sobre redes IP. Usado en redes modernas para autenticación y roaming.
+
+Uso en ataques:
+
+Interceptación de llamadas/SMS: Explotar fallos en SIGTRAN para redirigir o capturar tráfico.
+
+Suplantación de nodos: Inyectar mensajes maliciosos en la red.
+
+4. IMSI (International Mobile Subscriber Identity)
+Qué es: Identificador único de un usuario en una red móvil (guardado en la SIM). Se usa para autenticación y facturación.
+
+Uso en ataques:
+
+Robo de identidad: Clonar SIMs o realizar ataques de interceptación (IMSI catchers).
+
+Rastreo de objetivos: Identificar usuarios específicos (ej. funcionarios).
+
+5. SGSN (Serving GPRS Support Node)
+Qué es: Nodo crítico en redes 2G/3G que gestiona la movilidad de usuarios y el enrutamiento de datos.
+
+Uso en ataques:
+
+Emulación maliciosa: Liminal Panda simula un SGSN falso para crear túneles GTP y mantener persistencia.
+
+Movimiento lateral: Moverse entre redes aprovechando la confianza entre SGSN y GGSN.
+
+Relación con los Ataques de Liminal Panda
+eDNS + GTP: Para acceso inicial y exfiltración.
+
+SIGTRAN: Abuso de protocolos de señalización para robo de datos.
+
+IMSI: Objetivo principal (datos sensibles).
+
+SGSN emulado: Herramienta clave para persistencia y C2.
+
+
