@@ -1,2 +1,78 @@
 
 
+
+grupo Liminal Panda, centrándose en objetivos del sector de telecomunicaciones, especialmente en infraestructuras basadas en protocolos como eDNS, GTP (GPRS Tunneling Protocol), y SIGTRAN. A continuación, se resume y explica cada fase:
+
+1. Reconocimiento (Reconnaissance)
+Objetivo: Recopilar información sobre protocolos de telecomunicaciones (GTP, SIGTRAN, DNS) y la infraestructura de redes móviles.
+
+Técnicas:
+
+Análisis de redes de operadores y sus sistemas de roaming.
+
+Identificación de servidores eDNS (Enhanced DNS) vulnerables.
+
+2. Acceso Inicial (Initial Access)
+Vectores de ataque:
+
+Explotación de vulnerabilidades: Ataques a servidores eDNS con credenciales débiles o fallos de software.
+
+Aprovechamiento de relaciones de roaming: Abuso de acuerdos de confianza entre operadores para infiltrarse.
+
+3. Persistencia
+Backdoor "PingPong":
+
+Implanta un mecanismo de acceso remoto persistente.
+
+SGSN emulator: Simula un nodo SGSN (Serving GPRS Support Node) para crear túneles GTP legítimos, permitiendo comunicaciones encubiertas con servidores C2 (Command & Control).
+
+4. Movimiento Lateral (Lateral Movement)
+Herramienta "CordScan":
+
+Escanea redes internas para identificar sistemas críticos (ej. HLR, VLR, centros de datos).
+
+Abuso de confianza intra-operatoria:
+
+Usa credenciales robadas o protocolos mal configurados (como GTP) para moverse entre sistemas.
+
+5. Exfiltración de Datos (Data Exfiltration)
+Robo de información sensible:
+
+Datos de suscriptores: IMSI (Identidad del Usuario), registros de SMS, datos de llamadas.
+
+Técnicas de exfiltración:
+
+Túneles GTP/DNS/SIGTRAN: Encubre el tráfico de datos como tráfico legítimo de red.
+
+Abuso de confianza inter-operatoria: Aprovecha acuerdos de roaming para enviar datos a servidores controlados por atacantes.
+
+Técnicas Clave Destacadas
+Ataques a eDNS:
+
+Los servidores eDNS (usados en redes móviles para enrutamiento) son explotados para ganar acceso inicial.
+
+Emulación de SGSN:
+
+Permite crear túneles GTP falsos para comunicaciones C2, evadiendo detección.
+
+Abuso de protocolos de telecomunicaciones:
+
+GTP, SIGTRAN, y DNS son manipulados para moverse lateralmente y exfiltrar datos.
+
+Objetivos Principales
+Operadores de telecomunicaciones: Especialmente en India y Asia.
+
+Infraestructura crítica: HLR (Home Location Register), centros de datos de SMS, sistemas de roaming.
+
+Mitigación Recomendada
+Parchear servidores eDNS y sistemas críticos.
+
+Monitorizar túneles GTP inusuales (ej. conexiones a IPs desconocidas).
+
+Restringir acuerdos de roaming y confianza inter-operatoria.
+
+Auditar logs de SIGTRAN/DNS para detectar exfiltración encubierta.
+
+Conclusión
+Liminal Panda demuestra un enfoque altamente especializado en telecomunicaciones, combinando exploits técnicos con abuso de relaciones de confianza. Su uso de herramientas como PingPong y CordScan, junto con la emulación de nodos SGSN, los distingue como un APT sofisticado en este sector.
+
