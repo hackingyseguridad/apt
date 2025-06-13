@@ -1,4 +1,5 @@
 Typhon Panda
+https://en.wikipedia.org/wiki/Salt_Typhoon
 
 
 https://www.cybersecuritydive.com/news/cisco-salt-typhoon-used-new-custom-malware-in-telecom-attacks/740629/
@@ -7,3 +8,7 @@ https://www.shodan.io/search?query=port:4786%20country:%22ES%22%20org:%22Telefon
 Cisco Talos descubrió un nuevo malware personalizado, al que llama “JumbledPath”
 Tambien se explotaron estas vuln.: CVE-2023-20198, CVE-2023-20273  
 CVE-2023-20198 para obtener acceso inicial y emitió un comando de privilegio 15 para crear una combinación de usuario y contraseña local. Esto le permitió al usuario iniciar sesión con acceso normal. Posteriormente, el atacante explotó otro componente de la función de interfaz web, aprovechando el nuevo usuario local para elevar los privilegios a root y escribir el implante en el sistema de archivos. Cisco ha asignado CVE-2023-20273 a este problema. A CVE-2023-20198 se le ha asignado una puntuación CVSS de 10.0. A CVE-2023-20273 se le ha asignado una puntuación CVSS de 7.2.
+
+
+
+
