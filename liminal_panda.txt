@@ -1,6 +1,7 @@
 
 https://industrialcyber.co/threat-landscape/chinas-liminal-panda-hackers-target-global-telecom-networks-in-stealthy-cyber-espionage-campaign/
 https://www.crowdstrike.com/en-us/blog/liminal-panda-telecom-sector-threats/
+https://www.crowdstrike.com/en-us/blog/an-analysis-of-lightbasin-telecommunications-attacks/
 
 
 
