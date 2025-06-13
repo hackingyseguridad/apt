@@ -1,4 +1,7 @@
 
+https://industrialcyber.co/threat-landscape/chinas-liminal-panda-hackers-target-global-telecom-networks-in-stealthy-cyber-espionage-campaign/
+
+
 Liminal Panda es un grupo de ciberespionaje avanzado (APT) que ha sido asociado principalmente con operaciones dirigidas contra objetivos en India y China, con un enfoque en sectores gubernamentales, militares y de infraestructura crítica. A continuación, se describen algunos de los métodos de ataque comúnmente utilizados por este grupo:
 
 El ataque comienza con un socio de roaming que permite el acceso inicial a los servidores eDNS. Los eDNS son cruciales ya que resuelven las direcciones IP de nodos internos como HLR y GGSN. Una vez dentro, se establece la persistencia con una puerta trasera y un emulador SGSN para C&C. El movimiento lateral permite al atacante llegar a otros nodos como HLR/HSS. Finalmente, la exfiltración de datos se realiza a través de túneles GTP, llevando la información sensible fuera de la red hacia el atacante.
