@@ -3,8 +3,8 @@ Typhon Panda
 
 https://www.cybersecuritydive.com/news/cisco-salt-typhoon-used-new-custom-malware-in-telecom-attacks/740629/
 CVE-2018-0171 con SMI expuesto  en el puerto TCP 4786 vulnerabilidad  de desbordamiento de pila, en la función Smart Install del software Cisco IOS y Cisco IOS XE, permite RCE.
-
 https://www.shodan.io/search?query=port:4786%20country:%22ES%22%20org:%22Telefonica%22
+Cisco Talos descubrió un nuevo malware personalizado, al que llama “JumbledPath”
 
 
 
