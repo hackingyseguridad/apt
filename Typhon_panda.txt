@@ -3,4 +3,5 @@ Typhon Panda
 
 
 
-CVE-2018-0171 con SMI expuesto  en el puerto TCP 4786 vulnerabilidad en la función Smart Install del software Cisco IOS y Cisco IOS XE
+CVE-2018-0171 con SMI expuesto  en el puerto TCP 4786 vulnerabilidad  de desbordamiento de pila, en la función Smart Install del software Cisco IOS y Cisco IOS XE, permite RCE.
+
